@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Todo App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!--Tasks List-->
+    <h2> All Tasks </h2>
+    <ul>
+        {% for task in tasks %}
+        <li> {{task.t_title}}-{{task.t_desc}}-{{task.t_completed}} </li>
+        <a href="{% url "update_tasks" task.id %}">Update</a> <br>
+        <a href="{% url "delete_task" task.id %}">Delete</a>
+        {% endfor %}
+    </ul>
+    <footer>
+        <p>&copy; 2025 My Todo App</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

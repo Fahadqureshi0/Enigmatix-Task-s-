@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Todo App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!--Create and Add Tasks-->
+    <h2> Add Task Here </h2>
+    <p>Pin your Daily Tasks Here 📌</p>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Done</button>
+    </form> <br>
+    <a href="{% url "tasks_list"%}">tasks_list</a>
+    <footer>
+        <p>&copy; 2025 My Todo App</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
