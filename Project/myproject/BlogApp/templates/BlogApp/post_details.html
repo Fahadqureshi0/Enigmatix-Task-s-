@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'BlogApp/css/style.css' %}">
+</head>
+<body>
+    <h2>Post Details</h2>
+  <h1>{{ post.B_title }}</h1>
+<p>{{ post.B_content }}</p>
+<p><b>Published:</b> {{ post.B_publish }}</p>
+
+<a href="{% url 'all_posts' %}">Back</a>
+    <footer>
+        <p>&copy; 2025 My Django App</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

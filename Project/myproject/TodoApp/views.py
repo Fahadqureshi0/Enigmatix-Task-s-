@@ -34,7 +34,7 @@ def update_tasks(request,pk):
             return redirect("tasks_list")
         return render(request, "Todo/update_form.html", {"form":form})
     else:
-            form = TodoForm()
+            form = TodoForm(instance=task)
             return render(request, "TodoApp/update_form.html", {"form":form})
 
 # Delete_task________!

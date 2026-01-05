@@ -11,3 +11,4 @@ class TodoApp(models.Model):
 
     def __str__(self):
         return self.t_title   
+
