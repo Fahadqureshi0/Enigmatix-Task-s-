@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path #type:ignore
 from .views import all_tasks, create_tasks,delete_task,update_tasks
 
 urlpatterns = [

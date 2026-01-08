@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2> Delete your task </h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you Sure, you want to delete this task </ap>
+        {{form.as_p}}
+        <button type="delete">Delete </button>
+    <footer>
+        <p>&copy; 2025 My Django App</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

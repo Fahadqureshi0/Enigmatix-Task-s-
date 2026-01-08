@@ -17,3 +17,6 @@ def all_posts(request):
 def post_details(request, pk):
     post = get_object_or_404(BlogModel, pk=pk)
     return render(request, "BlogApp/post_details.html", {"post": post})
+
+
+

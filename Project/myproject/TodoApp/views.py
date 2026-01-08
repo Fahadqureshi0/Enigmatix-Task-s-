@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 
 from .models import TodoApp
 from .forms import TodoForm
 
 # To-Do App Views______!
 # CRUD Operations______!
 
-# All Task List_______!
+# # All Task List_______!
 def all_tasks(request):
     tasks = TodoApp.objects.all()
     return render(request, "TodoApp/tasks_list.html", {"tasks":tasks})
@@ -45,3 +45,6 @@ def delete_task(request, pk):
         task.delete()
         return redirect("tasks_list")
     return render(request, "TodoApp/task_delete.html", {"task":task})
+
+
+
